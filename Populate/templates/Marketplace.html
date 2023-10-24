@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <h1>Scrape Options</h1>
+  <p><strong>Set Rarity</strong></p>
+  <P>Current Rarity: {{ Rarity }}</P>
+  <ul>
+    <li><strong><a href="{% url 'Rarity' Rarity='Unique'%}">Unique:</a></strong></li>
+    <li><strong><a href="{% url 'Rarity' Rarity='Strange'%}">Strange:</a></strong></li>
+    <li><strong><a href="{% url 'Rarity' Rarity='Genuine'%}">Genuine:</a></strong></li>
+    <li><strong><a href="{% url 'Rarity' Rarity='Vintage'%}">Vintage:</a></strong></li>
+  </ul>
+  <p><strong>Set Type</strong></p>
+  <P>Current Type: {{ Type }}</P>
+  <ul>
+    <li><strong><a href="{% url 'Type' Type='Hat'%}">Hat:</a></strong></li>
+    <li><strong><a href="{% url 'Type' Type='Weapon'%}">Weapon:</a></strong></li>
+    <li><strong><a href="{% url 'Type' Type='Taunt'%}">Taunt:</a></strong></li>
+    <li><strong><a href="{% url 'Type' Type='Tool'%}">Tool:</a></strong></li>
+    <li><strong><a href="{% url 'Type' Type='Ticket'%}">Ticket:</a></strong></li>
+    <li><strong><a href="{% url 'Type' Type='Strange Part'%}">Strange Part:</a></strong></li>
+  </ul>
+  <p><strong><a href="{% url 'MarketplaceScrape' %}">Scrape</a></strong></p>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <h1>{{ ExchangeInstance.Name }}</h1>
+  <p>Current Exchange Rate: £{{ ExchangeInstance.DecimalValue }}</p>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}

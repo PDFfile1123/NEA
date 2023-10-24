@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <h1>Homepage</h1>
+  <p>Exchange Rates are as follows:</p>
+  <ul>
+    <li><strong><a href="{% url 'Edit' pk=1%}">Refined:</a></strong> £{{ RefExchange }}</li>
+    <li><strong><a href="{% url 'Edit' pk=2%}">Keys:</a></strong> £{{ KeyExchange }}</li>
+    <li><strong><a href="{% url 'Edit' pk=3%}">Dollars:</a></strong> £{{ USDExchange }}</li>
+  </ul>
+{% endblock %}

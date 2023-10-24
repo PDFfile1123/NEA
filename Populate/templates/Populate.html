@@ -1,0 +1,9 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <h1>Scrape Options</h1>
+  <ul>
+    <li><strong><a href="{% url 'Scrap' %}">Scrape Scrap.tf:</a></strong></li>
+    <li><strong><a href="{% url 'Marketplace' %}">Scrape Marketplace.tf:</a></strong></li>
+  </ul>
+{% endblock %}
