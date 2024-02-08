@@ -66,7 +66,7 @@ class ScrapScraper():
             ItemContainer= BankingCategory.find_element(By.CLASS_NAME, 'items-container')
             ItemList= ItemContainer.find_elements(By.XPATH, './div')
         
-            for item in ItemList:
+            for item in ItemList:#loops through the item list and either extracts specific attributes or applies regexes to get specific data from more general attributes
                 RarityData=item.get_attribute('class')
                 RarityText = re.search(RarityRegEx, RarityData).group()
                 Rarity = RarityDict[RarityText]

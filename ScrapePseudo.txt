@@ -1,0 +1,47 @@
+Import necessary libraries
+
+Define Scrap as "https://scrap.tf/"
+
+Class ScrapScraper:
+    Constructor initialize with parameters OrderType, ItemType, Location:
+        Set self.OrderType as OrderType
+        Set self.ItemType as ItemType
+        Set self.url as Location + OrderType + "/" + ItemType + "/"
+        Print self.url
+
+    Function find_item_details():
+        
+        Initialize driver with chromedriver and options
+        
+        Define regex patterns for parsing data
+        
+        Initialize an empty list ItemsData
+        
+        Define a dictionary RarityDict
+        
+        Open the webpage specified by self.url
+
+        Find all banking categories in the webpage
+        For each BankingCategory in BankingCategories:
+            Get the CategoryName
+            Find the ItemContainer within the BankingCategory
+            Find all items within the ItemContainer
+            For each item in Items:
+                Extract RarityData from item class attribute
+                Extract RarityText using RarityRegEx
+                Determine Rarity using RarityDict
+                Extract EquipRegion, EquipMerc, ContentData from item attributes
+                Depending on Rarity:
+                    - If Rarity is 3 or 1, extract ItemName directly
+                    - Otherwise, extract ItemText and then ItemName
+                Extract Availability, Level, Paint, PriceText, price, Currency from ContentData
+                If PriceText matches PriceRefTextRegEx:
+                    - Extract price and set Currency as "Refined"
+                Else if PriceText matches PriceKeyTextRegEx:
+                    - Extract price and set Currency as "Keys"
+                
+                Create ItemData tuple with extracted information
+                Print ItemData
+                Append ItemData to ItemsData
+        
+        Return ItemsData

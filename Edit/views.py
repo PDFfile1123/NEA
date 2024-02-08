@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 # Create your views here.
 def Edit(request, pk):
-    ExchangeInstance = get_object_or_404(Exchange, ExchangeID=pk)
+    ExchangeInstance = get_object_or_404(Exchange, ExchangeID=pk) # gets the primary key from the URL and uses it to get the right row from the table
 
     # If this is a POST request then process the Form data
     form = ExchangeForm(request.POST or None, request.FILES or None, instance=ExchangeInstance)

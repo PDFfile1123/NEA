@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 # Create your models here.
-
+# the models correspond to my database and allow me to treat rows as classes 
 class Item(models.Model):
     ItemID= models.AutoField(primary_key=True)
     Name = models.CharField(max_length=100)

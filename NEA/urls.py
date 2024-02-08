@@ -18,10 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 
-urlpatterns = [
+urlpatterns = [ # central url patterns that redirect to the respective applications urls
     path('admin/', admin.site.urls),
     path('Homepage/', include('Homepage.urls')),
-    path('Graph/', include('Graph.urls')),
     path('View/', include('View.urls')),
     path('Edit/', include('Edit.urls')),
     path('Populate/', include('Populate.urls')),

@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'View',
     'Homepage',
-    'Graph',
     'Edit',
     'Populate',
     'django_tables2',
